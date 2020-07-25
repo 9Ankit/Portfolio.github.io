@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+/********************Jomy**********************/
+@import "./app/variables";
+
+html,
+body {
+  height: 100%;
+  background-color: $background-color;
+}
+body {
+  margin: 0;
+}
+.p-15 {
+  padding: $padding-15;
+}
+.p-l-15 {
+  padding-left: $padding-left-15;
+}
+.p-r-15 {
+  padding-right: $padding-right-15;
+}
+.p-t-15 {
+  padding-top: $padding-top-15;
+}
+.p-b-15 {
+  padding-bottom: $padding-bottom-15;
+}
+.m-15 {
+  margin: $margin-15;
+}
+.m-l-15 {
+  margin-left: $margin-left-15;
+}
+.m-r-15 {
+  margin-right: $margin-right-15;
+}
+.m-t-15 {
+  margin-top: $margin-top-15;
+}
+.m-b-15 {
+  margin-bottom: $margin-bottom-15;
+}
+
+@font-face {
+  font-family: $TitilliumWeb-Regular;
+  src: url("./assets/fonts/TitilliumWeb-Regular.ttf");
+}
+@font-face {
+  font-family: $TitilliumWeb-SemiBold;
+  src: url("./assets/fonts/TitilliumWeb-SemiBold.ttf");
+}
+@font-face {
+  font-family: $TitilliumWeb-Bold;
+  src: url("./assets/fonts/TitilliumWeb-Bold.ttf");
+}
