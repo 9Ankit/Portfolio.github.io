@@ -11,12 +11,10 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
