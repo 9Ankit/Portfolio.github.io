@@ -1,1 +1,17 @@
-<p>header works!</p>
+<mat-toolbar
+  style="background-color: #ef5734; color: white;"
+  class="example-toolbar"
+>
+  <div fxFlex="3" fxLayoutAlign="end center">
+    <button mat-icon-button (click)="sidebarToggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div fxFlex="90" fxLayoutAlign="center center">
+    <h1>Ankit Gupta</h1>
+  </div>
+
+  <div fxFlex="">
+    <button mat-button>Connect me</button>
+  </div>
+</mat-toolbar>

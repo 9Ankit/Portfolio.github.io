@@ -1,0 +1,15 @@
+<app-header (expand)="toggledSidebar()"></app-header>
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav
+    #sidenav
+    class="sidenav-container_sibebar"
+    mode="side"
+    [opened]="sidebarStatus"
+  >
+    <app-sidebar [open]="isExpanded"></app-sidebar>
+  </mat-sidenav>
+
+  <div class="sidenav-container_content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
