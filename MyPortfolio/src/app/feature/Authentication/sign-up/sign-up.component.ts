@@ -13,6 +13,6 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {}
 
   submitNow() {
-    this.router.navigate(['home']);
+    this.router.navigate(['login']);
   }
 }
