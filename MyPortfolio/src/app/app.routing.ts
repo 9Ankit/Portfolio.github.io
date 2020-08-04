@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { StructureComponent } from './layout/structure.component';
+import { StructureComponent } from './layout/Dashboard Structure/structure.component';
+import { AuthStructureComponent } from './shared/Component/Authentication Structure/auth-structure.component';
 
 export const AppRoutes: Routes = [
   {
@@ -11,6 +12,19 @@ export const AppRoutes: Routes = [
         loadChildren: () =>
           import('./feature/My-Descriptions/description-layout.module').then(
             (m) => m.DescriptionLayoutModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '',
+    component: AuthStructureComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./feature/Authentication/authentication.module').then(
+            (m) => m.AuthenticationModule
           ),
       },
     ],

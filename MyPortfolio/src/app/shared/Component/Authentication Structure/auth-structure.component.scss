@@ -1,0 +1,23 @@
+@import "../../../variables";
+
+#auth_container {
+  height: 100vh;
+  background-color: #009478;
+}
+
+#auth_block {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#auth_leftImage {
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#auth_form {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { routerHeading } from '../../shared/Api Data/JSON/headings';
+import { Router } from '@angular/router';
+import { routerHeading } from '../../../shared/Api Data/JSON/headings';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Output() expand = new EventEmitter<{ status: boolean }>();
   isExpanded;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -19,5 +20,10 @@ export class HeaderComponent implements OnInit {
     this.expand.emit({
       status: this.isExpanded = false,
     });
+  }
+
+  loginNow() {
+    this.router.navigate(['/signUp']);
+    console.log('signUp');
   }
 }

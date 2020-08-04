@@ -1,1 +1,26 @@
-<p>sign-up works!</p>
+<div fxLayout="column" id="signup_container">
+  <h1>Authentication Forms Here</h1>
+  <div fxLayout="row" fxFlex="100">
+    <div fxFlex="100">
+      <p>Username</p>
+      <mat-form-field floatLabel="never">
+        <input matInput type="text" placeholder="Ankit Gupta" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxFlex="100">
+    <div fxFlex="100">
+      <p>Password</p>
+      <mat-form-field floatLabel="never">
+        <input matInput type="password" placeholder="Ui Developer" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxFlex="100">
+    <div fxFlex="51">
+      <button (click)="submitNow()" mat-button color="primary">Submit</button>
+    </div>
+  </div>
+</div>
