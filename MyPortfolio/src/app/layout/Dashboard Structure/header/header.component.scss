@@ -1,1 +1,56 @@
+@import "../../../variables";
 
+#toolbar {
+  background-image: linear-gradient(
+    to bottom left,
+    $toolbar-color1,
+    $toolbar-color2,
+    $toolbar-color3
+  );
+  color: $color-white;
+  min-height: 75px;
+}
+
+.mat-icon {
+  color: $color-white;
+  font-size: 26px;
+}
+
+#author_name h1 {
+  padding-left: 11%;
+  font-size: 30px;
+  font-family: $Recursive-Regular !important;
+}
+
+#downlaod_block img {
+  height: 35px;
+}
+
+#login_block img {
+  height: 47px;
+}
+
+#login_block button {
+  padding: $padding-0 !important;
+}
+
+#downlaod_block button,
+#login_block button {
+  padding: 3px 7px;
+  min-width: 40px;
+  border-radius: 100%;
+}
+
+#downlaod_block button,
+#login_block button {
+  border: 1.5px solid $button-border;
+  box-shadow: 4px 2px 0 $button-shadow;
+  transition: 0.2s ease-in-out;
+}
+
+#downlaod_block button:hover,
+#login_block button:hover {
+  box-shadow: none;
+  top: 1px;
+  left: 2px;
+}

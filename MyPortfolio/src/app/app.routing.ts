@@ -1,14 +1,8 @@
 import { Routes } from '@angular/router';
 import { StructureComponent } from './layout/Dashboard Structure/structure.component';
-import { AuthStructureComponent } from './shared/Component/Authentication Structure/auth-structure.component';
-import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
+import { AuthStructureComponent } from './layout/Auth Structure/auth-structure.component';
 
 export const AppRoutes: Routes = [
-  // {
-  //   path: '**',
-  //   redirectTo: '404',
-  // },
-
   {
     path: '',
     component: StructureComponent,

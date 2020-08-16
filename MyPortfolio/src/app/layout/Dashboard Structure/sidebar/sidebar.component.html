@@ -1,4 +1,4 @@
-<mat-nav-list>
+<mat-nav-list disableRipple>
   <mat-list-item
     *ngFor="let list of routerList; let i = index"
     (mouseenter)="mouseenter()"
@@ -8,9 +8,9 @@
     [ngClass]="{ highlight: i == selectedIndex }"
   >
     <span id="routerLinks" *ngIf="open || isShowing">
-      {{ list.heading | uppercase }}
+      <p>{{ list.heading | uppercase }}</p>
     </span>
-    <mat-icon mat-list-icon> {{ list.router_icon }} </mat-icon>
+    <mat-icon mat-list-icon id="routerIcons"> {{ list.router_icon }} </mat-icon>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-nav-list>

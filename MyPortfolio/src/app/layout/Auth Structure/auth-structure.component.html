@@ -1,19 +1,15 @@
 <div fxLayout="row" fxLayoutAlign="space-around center" id="auth_container">
-  <div fxFlex="60" fxLayoutAlign="center center" id="auth_block">
+  <div fxFlex="60" fxFlex.lt-md="100" fxLayout.lt-md="column" id="auth_block">
     <div
       fxLayout="column"
       fxFlex="40"
+      fxFlex.lt-md="100"
       fxLayoutAlign="center start"
       id="auth_leftImage"
     >
       <app-left-image></app-left-image>
     </div>
-    <div
-      fxLayout="column"
-      fxFlex="60"
-      id="auth_form"
-      fxLayoutAlign="center center"
-    >
+    <div fxLayout="column" fxFlex="60" fxFlex.lt-md="100" id="auth_form">
       <app-right-text></app-right-text>
     </div>
   </div>

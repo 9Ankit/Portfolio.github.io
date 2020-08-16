@@ -1,13 +1,12 @@
-@import "../../../variables";
+@import "../../variables";
 
 #auth_container {
   height: 100vh;
-  background-color: #009478;
+  background-color: $Auth-bg-color;
 }
 
 #auth_block {
-  background-color: white;
-  border-radius: 5px;
+  background-color: $color-white;
   padding: 5px;
 }
 

@@ -9,9 +9,7 @@ import { HeaderComponent } from './layout/Dashboard Structure/header/header.comp
 import { SidebarComponent } from './layout/Dashboard Structure/sidebar/sidebar.component';
 import { StructureComponent } from './layout/Dashboard Structure/structure.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
-import { AuthStructureComponent } from './shared/Component/Authentication Structure/auth-structure.component';
-import { LeftImageComponent } from './shared/Component/Authentication Structure/left-image/left-image.component';
-import { RightTextComponent } from './shared/Component/Authentication Structure/right-text/right-text.component';
+import { ParticleComponent } from './shared/Component/Particle/particle.component';
 //Shared Components Ends
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +19,11 @@ import { MatIconModule } from '@angular/material/icon'; //2time using already ca
 //Routing
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppRoutes } from './app.routing';
+
+// Authentication Structure
+import { AuthStructureComponent } from './layout/Auth Structure/auth-structure.component';
+import { LeftImageComponent } from './layout/Auth Structure/left-image/left-image.component';
+import { RightTextComponent } from './layout/Auth Structure/right-text/right-text.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { AppRoutes } from './app.routing';
     AuthStructureComponent,
     LeftImageComponent,
     RightTextComponent,
+    ParticleComponent,
   ],
   imports: [
     BrowserModule,

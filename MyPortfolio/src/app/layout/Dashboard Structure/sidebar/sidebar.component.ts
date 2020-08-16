@@ -1,13 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { routerHeading } from '../../../shared/Api Data/JSON/headings';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SidebarComponent implements OnInit {
   routerList: Array<any> = routerHeading;
+  @Output() hover = new EventEmitter();
   @Input() open;
   isShowing = false;
   val: any;
@@ -19,9 +28,9 @@ export class SidebarComponent implements OnInit {
 
   mouseenter() {
     if (window.innerWidth >= 768) {
-      console.log('sidebar window size ig greater than 800');
       if (!this.open) {
         this.isShowing = true;
+        this.hover.emit(true);
       }
     }
   }
@@ -29,6 +38,7 @@ export class SidebarComponent implements OnInit {
   mouseleave() {
     if (!this.open) {
       this.isShowing = false;
+      this.hover.emit(false);
     }
   }
 

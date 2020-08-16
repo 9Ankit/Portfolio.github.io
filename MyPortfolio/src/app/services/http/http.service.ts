@@ -10,8 +10,8 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-  private API_URL: string = environment.serverUrl;
-  private TEST_URL: string = 'http://api.dev-etuition.amazecodes.com/api';
+  // private API_URL: string = environment.serverUrl;
+  private TEST_URL: string = 'http://address';
   // constructor(private http: HttpClient, private config: ConfigService) { }
   constructor(private http: HttpClient, private router: Router) {}
 

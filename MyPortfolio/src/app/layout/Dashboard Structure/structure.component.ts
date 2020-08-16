@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-structure',
@@ -7,24 +7,28 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./structure.component.scss'],
 })
 export class StructureComponent implements OnInit {
-  isExpanded = true;
+  isExpanded: boolean = true;
   sidebarStatus: boolean = true;
+  hoverEffect: boolean;
+  sidebarMode: boolean;
 
-  @ViewChild('sidenav') sidenav: MatSidenav;
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (event.target.innerWidth < 770) {
-      this.sidebarStatus = false;
-    } else {
-      this.sidebarStatus = true;
-    }
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit(): void {
+    this.breakpointObserver
+      .observe(['(min-width: 770px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.sidebarStatus = true;
+          this.sidebarMode = true;
+        } else {
+          this.sidebarStatus = false;
+          this.sidebarMode = false;
+        }
+      });
   }
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  toggledSidebar() {
+  toggledSidebar(event) {
     if (window.innerWidth < 770) {
       this.isExpanded = true;
       this.sidebarStatus = !this.sidebarStatus;
@@ -32,5 +36,11 @@ export class StructureComponent implements OnInit {
       this.sidebarStatus = true;
       this.isExpanded = !this.isExpanded;
     }
+  }
+
+  showHideEffect(event) {
+    console.log(event);
+    this.hoverEffect = event;
+    console.log('this.hoverEffect  ', this.hoverEffect);
   }
 }

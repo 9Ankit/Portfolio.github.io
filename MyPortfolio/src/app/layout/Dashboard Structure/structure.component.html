@@ -1,15 +1,31 @@
-<app-header (expand)="toggledSidebar()"></app-header>
-<mat-sidenav-container class="sidenav-container" autosize>
+<app-header (expand)="toggledSidebar($event)"></app-header>
+<mat-sidenav-container class="sidenav-container" autosize class="p-15">
   <mat-sidenav
     #sidenav
     class="sidenav-container_sibebar"
-    mode="side"
+    [mode]="sidebarMode === true ? 'side' : 'over'"
     [opened]="sidebarStatus"
   >
-    <app-sidebar [open]="isExpanded"></app-sidebar>
+    <app-sidebar
+      [open]="isExpanded"
+      (hover)="hoverEffect = $event"
+    ></app-sidebar>
   </mat-sidenav>
-
-  <div class="sidenav-container_content">
+  <mat-sidenav-content
+    class="p-15"
+    *ngIf="sidebarMode"
+    class="sidenav-container_content"
+    [style.marginLeft.px]="isExpanded ? 187 : 77"
+    [ngClass]="hoverEffect == true ? 'my-class1' : ' '"
+  >
     <router-outlet></router-outlet>
-  </div>
+  </mat-sidenav-content>
+
+  <mat-sidenav-content
+    *ngIf="!sidebarMode"
+    class="sidenav-container_content"
+    [style.marginLeft.px]="isExpanded ? 5 : 0"
+  >
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

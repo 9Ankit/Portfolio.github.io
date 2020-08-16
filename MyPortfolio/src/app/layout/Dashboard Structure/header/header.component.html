@@ -1,17 +1,51 @@
-<mat-toolbar
-  style="background-color: #ef5734; color: white;"
-  class="example-toolbar"
->
-  <div fxFlex="3" fxLayoutAlign="end center">
+<mat-toolbar id="toolbar">
+  <div
+    fxFlex="3"
+    fxFlex.lt-md="5"
+    fxLayoutAlign.lt-md="start center"
+    fxLayoutAlign="end center"
+  >
     <button mat-icon-button (click)="sidebarToggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div fxFlex="90" fxLayoutAlign="center center">
+  <div
+    fxFlex="87"
+    fxFlex.lt-md="70"
+    fxLayoutAlign="center center"
+    id="author_name"
+  >
     <h1>Ankit Gupta</h1>
   </div>
 
-  <div fxFlex="">
-    <button mat-button (click)="loginNow()">Connect me</button>
+  <div
+    fxFlex="10"
+    fxFlex.lt-md="25"
+    id="action_block"
+    fxLayoutAlign="start center"
+    fxLayoutAlign.lt-md="end center"
+    fxLayoutGap="15px"
+  >
+    <span id="downlaod_block" *ngIf="!mobile">
+      <a href="../../../../assets/CV/_cv.pdf" download="_cv.pdf">
+        <button mat-button>
+          <img
+            src="../../../../assets/Images/download3.png"
+            alt="download CV"
+          />
+        </button>
+      </a>
+    </span>
+    <span id="login_block">
+      <button mat-button (click)="loginNow()" *ngIf="!mobile">
+        <img src="../../../../assets/Images/user@512px.png" alt="login" />
+      </button>
+      <img
+        (click)="loginNow()"
+        src="../../../../assets/Images/login2.png"
+        alt="login"
+        *ngIf="mobile"
+      />
+    </span>
   </div>
 </mat-toolbar>
